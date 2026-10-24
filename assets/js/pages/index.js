@@ -2,6 +2,8 @@
 
 const IndexPage = {
   init: async function() {
+    this.initHelloButton();
+
     const hasKnockoutContainers = 
       document.getElementById('champ-semis') ||
       document.getElementById('champ-final') ||
@@ -35,5 +37,16 @@ const IndexPage = {
     } catch (error) {
       console.error('Failed to load knockout data:', error);
     }
+  },
+
+  initHelloButton: function() {
+    const button = document.getElementById('hello-button');
+    const message = document.getElementById('briefMessage');
+    if (!button || !message) return;
+
+    button.addEventListener('click', function() {
+      message.textContent = 'Hello Clicked';
+      message.hidden = false;
+    });
   }
 };

@@ -3,6 +3,7 @@
 const IndexPage = {
   init: async function() {
     this.initHelloButton();
+    this.initSmileyButton();
 
     const hasKnockoutContainers = 
       document.getElementById('champ-semis') ||
@@ -47,6 +48,15 @@ const IndexPage = {
     button.addEventListener('click', function() {
       message.textContent = 'Hello Clicked';
       message.hidden = false;
+    });
+  },
+
+  initSmileyButton: function() {
+    const smiley = document.getElementById('smiley-button');
+    if (!smiley) return;
+
+    smiley.addEventListener('click', function() {
+      smiley.hidden = true;
     });
   }
 };

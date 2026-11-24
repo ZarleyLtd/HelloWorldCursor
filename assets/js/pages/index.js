@@ -42,12 +42,10 @@ const IndexPage = {
 
   initHelloButton: function() {
     const button = document.getElementById('hello-button');
-    const message = document.getElementById('briefMessage');
-    if (!button || !message) return;
+    if (!button) return;
 
     button.addEventListener('click', function() {
-      message.textContent = 'Hello Clicked';
-      message.hidden = false;
+      BriefMessage.show('Hello Clicked', button);
     });
   },
 
